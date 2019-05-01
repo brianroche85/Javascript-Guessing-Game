@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Brian's Guessing Game</title> 
+
+<script language="javascript">
+
+var theNumber = Math.floor(Math.random()*100+1); 
+
+
+function checkguess()
+{
+	var guess = document.getElementById('guess'); 
+	var myNumber = guess.value; 
+	var output = document.getElementById('output'); 
+	if (myNumber < theNumber)
+	
+	{
+	output.value = "Too low, please try again."; 
+	// alert("The number was " + theNumber + "! You Win");
+	}
+	
+	else if (myNumber > theNumber)
+	{
+	output.value = "Too high, please try again."; 
+	}
+	
+	else if (myNumber == theNumber)
+	{
+	output.value = "You got the number, you win!"; 
+	alert("The number was " + theNumber + "! You Win");
+	theNumber = Math.floor(Math.random()*100+1); 
+	}
+	
+}
+
+</script> 
+
+
+</head>
+
+<body>
+<h2>Brian's guessing game</h2>
+<form> 
+Enter a number from 1 to 100:
+<input id="guess" type="text" size="8"/><br/> 
+<input type="button" value="Guess" onclick="checkguess()" /><br/> 
+<input id="output" type="text" size="40"><br/> 
+</form>
+</body>
+</html> 
